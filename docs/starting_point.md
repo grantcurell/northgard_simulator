@@ -7,7 +7,7 @@ Use an event-driven simulation, not a frame loop. In this problem, the state onl
 Project structure
 
 ```text
-northgard_lynx_optimizer/
+northgard_simulator/   (repo root)
   data/
     units.json
     buildings.json

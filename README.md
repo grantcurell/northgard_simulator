@@ -71,7 +71,7 @@ The top-level **`search/`** package only **re-exports** `northgard.search` for i
 
 **Prerequisite:** an **NVIDIA GPU** with drivers, CUDA libraries compatible with your **CuPy** wheel, and a successful probe kernel on device 0. If CuPy cannot import or run on the GPU, the optimizer **exits with an error** (no silent CPU fallback).
 
-From this directory (`northgard_lynx_optimizer`), with dependencies installed:
+From the **repository root** (this directory), with dependencies installed:
 
 ```bash
 python -m pytest tests/ -q
