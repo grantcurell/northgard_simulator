@@ -1,0 +1,33 @@
+{
+  "id": "no_shore_hostile",
+  "start_zone": "main",
+  "zones": {
+    "main": {
+      "neighbors": ["a", "b"],
+      "zone_tags": ["forest"],
+      "building_capacity": 5,
+      "buildings": [],
+      "neutral_pack": null,
+      "lure_type": null,
+      "improved": false
+    },
+    "a": {
+      "neighbors": ["main"],
+      "zone_tags": ["forest"],
+      "building_capacity": 2,
+      "buildings": [],
+      "neutral_pack": "wolves_2",
+      "lure_type": null,
+      "improved": false
+    },
+    "b": {
+      "neighbors": ["main"],
+      "zone_tags": ["forest", "stone"],
+      "building_capacity": 2,
+      "buildings": [],
+      "neutral_pack": "wolves_2",
+      "lure_type": null,
+      "improved": false
+    }
+  }
+}

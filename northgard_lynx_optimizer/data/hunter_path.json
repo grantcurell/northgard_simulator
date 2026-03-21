@@ -1,0 +1,25 @@
+{
+  "unlock_thresholds": [30, 80, 130, 190, 250, 310, 380, 440, 510, 590, 660, 740],
+  "caring_siblings": {
+    "brundr_attack_pct_if_with_kaelinn": 30,
+    "regen_same_allied_zone": true
+  },
+  "sibling_rivalry": {
+    "kaelinn_defense_pct_if_with_brundr": 40,
+    "lynxes_produce_food_in_territory": true
+  },
+  "wise_one": {"mielikki_lore_out_of_combat": 3},
+  "double_shot": {
+    "extra_arrow": 1,
+    "secondary_damage_pct": 30
+  },
+  "wild_hunter": {
+    "ignore_supply_malus": true,
+    "ignore_winter_attack_penalty": true
+  },
+  "path_complete": {
+    "tracker_attack_speed_pct_per_buy": 5,
+    "tracker_range_pct_per_buy": 5,
+    "tracker_move_speed_pct_per_buy": 5
+  }
+}

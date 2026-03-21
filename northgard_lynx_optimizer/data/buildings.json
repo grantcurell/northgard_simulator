@@ -1,0 +1,64 @@
+{
+  "town_hall": {
+    "krowns_per_tick": 3,
+    "housing": 6,
+    "upgrade_pop_growth_pct": 20,
+    "upgrade_extra_housing": 2,
+    "upgrade_cost_wood": 100,
+    "upgrade_cost_krowns": 50,
+    "upgrade_cost_stone": 10,
+    "upgrade_changes_krowns_production": false,
+    "build_time_sec": 0
+  },
+  "house": {
+    "cost_wood": 50,
+    "cost_krowns": 10,
+    "housing": 5,
+    "upgrade_extra_housing": 3,
+    "build_time_sec": 15,
+    "upgrade_cost_wood": 50,
+    "upgrade_cost_krowns": 50,
+    "upgrade_build_time_sec": 20
+  },
+  "marketplace": {
+    "prerequisite": "woodcutter",
+    "merchant_slots": 2,
+    "merchant_krowns_per_tick": 2,
+    "buy_price_food": 2,
+    "buy_price_wood": 3,
+    "buy_price_stone": 40,
+    "buy_price_iron": 50,
+    "cost_wood": 80,
+    "cost_krowns": 0,
+    "build_time_sec": 25,
+    "upgrade_cost_wood": 100,
+    "upgrade_cost_stone": 10
+  },
+  "woodcutter": {
+    "cost_wood": 50,
+    "build_time_sec": 12
+  },
+  "archery_range": {
+    "cost_wood": 50,
+    "warband_cap": 2,
+    "upgrade_cost_wood": 100,
+    "upgrade_cost_krowns": 50,
+    "upgrade_cost_stone": 10,
+    "upgrade_extra_warband": 1,
+    "upgrade_tracker_attack_bonus_pct": 5,
+    "build_time_sec": 22,
+    "upgrade_build_time_sec": 20
+  },
+  "forge": {
+    "prerequisite": "woodcutter",
+    "cost_wood": 60,
+    "cost_krowns": 15,
+    "upgrade_second_smith": true,
+    "upgrade_forge_speed_pct": 20,
+    "build_time_sec": 20,
+    "upgrade_cost_wood": 100,
+    "upgrade_cost_krowns": 50,
+    "upgrade_cost_stone": 10,
+    "upgrade_build_time_sec": 25
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "seconds_per_month": 60.0,
+  "seconds_per_tick": 10.0,
+  "ticks_per_month": 6,
+  "seconds_per_year": 720.0,
+  "months_per_year": 12,
+  "starting_month_index": 0,
+  "calendar_note": "month 0 = March (wiki/editor); winter = Dec–Feb → indices 9,10,11",
+  "winter_month_indices": [9, 10, 11],
+  "spawn_calibration": {
+    "base_interval_sec": 45.0,
+    "happy_coef": 0.08,
+    "pop_coef": 0.02,
+    "pop_ref": 6
+  },
+  "starting_resources": {
+    "food": 150.0,
+    "wood": 120.0,
+    "krowns": 25.0,
+    "stone": 0.0,
+    "iron": 0.0,
+    "lore": 0.0,
+    "fame": 0.0,
+    "trophies": 0.0
+  },
+  "starting_units": {
+    "villagers": 4,
+    "scouts": 0,
+    "woodcutters": 0,
+    "hunters": 0,
+    "merchants": 0,
+    "sailors": 0,
+    "miners": 0,
+    "healers": 0,
+    "trackers": 0,
+    "mielikki": 0,
+    "brundr": 0,
+    "kaelinn": 0
+  },
+  "colonize_food_without_colonization_lore": [0, 20, 40, 80, 120, 160, 200, 250, 330, 430, 540, 670, 800, 950],
+  "colonize_food_with_colonization_lore": [0, 10, 30, 50, 80, 110, 140, 170, 240, 330, 420, 530, 650, 780],
+  "lore_from_population_ticks": [
+    {"min_pop": 1, "max_pop": 5, "lore_per_tick": 1},
+    {"min_pop": 6, "max_pop": 9, "lore_per_tick": 2},
+    {"min_pop": 10, "max_pop": 19, "lore_per_tick": 3},
+    {"min_pop": 20, "max_pop": 32, "lore_per_tick": 4},
+    {"min_pop": 33, "max_pop": 99999, "lore_per_tick": 5}
+  ],
+  "fame_per_population_per_sec": 0.05,
+  "fame_note": "calibratable — not sourced as exact formula in expert answers",
+  "animal_kill_trophy_rate": 0.5,
+  "default_happiness": 2.0,
+  "starting_resources_note": "S1 unknown — placeholders; see docs/DATA_GAPS.md"
+}

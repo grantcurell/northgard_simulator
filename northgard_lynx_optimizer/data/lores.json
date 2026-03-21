@@ -1,0 +1,25 @@
+{
+  "sharp_axes": {"woodcutter_prod_pct": 20},
+  "colonization": {"colonize_food_cost_pct": -30},
+  "spoils_of_plenty": {
+    "max_standard_lures": 2,
+    "savage_deer_meat_bonus_pct": 10,
+    "hunter_tool_free": true,
+    "hunter_forge_time_pct": -50
+  },
+  "recruitment": {"pop_growth_speed_pct": 25},
+  "hearthstone": {
+    "winter_firewood_pct": -50,
+    "winter_food_penalty_pct": -20
+  },
+  "shiny_happy_people": {"population_happiness_requirement_pct": -20},
+  "weaponsmith": {"military_attack_pct": 20},
+  "archery_mastery": {
+    "first_tracker_free": true,
+    "archery_range_upgrade_cost_pct": -50
+  },
+  "feeling_safe": {
+    "happiness_if_warchief": 3,
+    "happiness_per_upgraded_military_camp": 1
+  }
+}

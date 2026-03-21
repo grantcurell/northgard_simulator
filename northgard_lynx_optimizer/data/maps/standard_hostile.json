@@ -1,0 +1,42 @@
+{
+  "id": "standard_hostile",
+  "start_zone": "main",
+  "zones": {
+    "main": {
+      "neighbors": ["north", "east"],
+      "zone_tags": ["forest", "deer"],
+      "building_capacity": 6,
+      "buildings": [],
+      "neutral_pack": null,
+      "lure_type": null,
+      "improved": false
+    },
+    "north": {
+      "neighbors": ["main", "far_north"],
+      "zone_tags": ["forest"],
+      "building_capacity": 3,
+      "buildings": [],
+      "neutral_pack": "wolves_2",
+      "lure_type": null,
+      "improved": false
+    },
+    "east": {
+      "neighbors": ["main"],
+      "zone_tags": ["shore", "fish"],
+      "building_capacity": 3,
+      "buildings": [],
+      "neutral_pack": "draugr_3",
+      "lure_type": null,
+      "improved": false
+    },
+    "far_north": {
+      "neighbors": ["north"],
+      "zone_tags": ["forest", "stone"],
+      "building_capacity": 2,
+      "buildings": [],
+      "neutral_pack": "bear_1",
+      "lure_type": null,
+      "improved": false
+    }
+  }
+}

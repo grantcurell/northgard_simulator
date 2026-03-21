@@ -1,0 +1,33 @@
+{
+  "id": "rich_shore",
+  "start_zone": "main",
+  "zones": {
+    "main": {
+      "neighbors": ["shore"],
+      "zone_tags": ["forest", "deer"],
+      "building_capacity": 6,
+      "buildings": [],
+      "neutral_pack": null,
+      "lure_type": null,
+      "improved": false
+    },
+    "shore": {
+      "neighbors": ["main", "island"],
+      "zone_tags": ["shore", "fish"],
+      "building_capacity": 4,
+      "buildings": [],
+      "neutral_pack": "wolves_2",
+      "lure_type": null,
+      "improved": false
+    },
+    "island": {
+      "neighbors": ["shore"],
+      "zone_tags": ["shore"],
+      "building_capacity": 2,
+      "buildings": [],
+      "neutral_pack": "draugr_3",
+      "lure_type": null,
+      "improved": false
+    }
+  }
+}

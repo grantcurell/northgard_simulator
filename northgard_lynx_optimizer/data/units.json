@@ -1,0 +1,56 @@
+{
+  "villager": {
+    "summer_food_per_tick": 4.0,
+    "winter_food_per_tick": 2.4
+  },
+  "woodcutter": {
+    "wood_per_tick": 4.0
+  },
+  "merchant": {
+    "krowns_per_tick": 2.0
+  },
+  "miner": {
+    "stone_per_month": 1.92,
+    "stone_per_sec": 0.032
+  },
+  "tracker": {
+    "health": 50,
+    "attack": 10,
+    "defense": 3,
+    "cost_formula": "25 + 5*(n-1)"
+  },
+  "warchief_default": {
+    "health": 75,
+    "attack": 15,
+    "defense": 10,
+    "cost_krowns": 150,
+    "cost_iron": 5,
+    "consumes_food": false,
+    "consumes_wood": false,
+    "counts_toward_population": false
+  },
+  "mielikki": {
+    "cost_krowns": 150,
+    "cost_iron": 0,
+    "health": 60,
+    "attack": 10,
+    "defense": 8,
+    "consumes_food": false,
+    "consumes_wood": false,
+    "counts_toward_population": false
+  },
+  "brundr": {
+    "cost_krowns": 60,
+    "cost_food": 40,
+    "health": 60,
+    "attack": 13,
+    "defense": 7
+  },
+  "kaelinn": {
+    "cost_krowns": 40,
+    "cost_food": 60,
+    "health": 60,
+    "attack": 13,
+    "defense": 7
+  }
+}

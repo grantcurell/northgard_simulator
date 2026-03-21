@@ -1,0 +1,10 @@
+{
+  "fame_200": {
+    "unlock": "mythical_lure",
+    "feast_discount_per_animal_kill_pct": 7.5,
+    "feast_discount_cap_pct": 50
+  },
+  "fame_500": {
+    "unlock": "oskoreia"
+  }
+}
