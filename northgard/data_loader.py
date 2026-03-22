@@ -24,4 +24,7 @@ def load_map(map_id: str) -> Dict[str, Any]:
 def load_benchmarks() -> list:
     path = _root() / "data" / "enemy_benchmarks.json"
     with open(path, "r", encoding="utf-8") as f:
-        return json.load(f)
+        data = json.load(f)
+    if isinstance(data, list):
+        return data
+    return list(data.get("benchmarks", []))

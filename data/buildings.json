@@ -8,17 +8,21 @@
     "upgrade_cost_krowns": 50,
     "upgrade_cost_stone": 10,
     "upgrade_changes_krowns_production": false,
-    "build_time_sec": 0
+    "build_time_days": 10,
+    "build_time_source": "northgard.wiki Town Hall",
+    "upgrade_build_time_status": "unknown_not_publicly_sourced"
   },
   "house": {
     "cost_wood": 50,
     "cost_krowns": 10,
     "housing": 5,
     "upgrade_extra_housing": 3,
-    "build_time_sec": 15,
+    "build_time_days": 13,
+    "build_time_source": "northgard.wiki House",
     "upgrade_cost_wood": 50,
     "upgrade_cost_krowns": 50,
-    "upgrade_build_time_sec": 20
+    "upgrade_build_time_sec": 20,
+    "upgrade_build_time_note": "Calibratable placeholder — not sourced in latest expert pass"
   },
   "marketplace": {
     "prerequisite": "woodcutter",
@@ -30,13 +34,20 @@
     "buy_price_iron": 50,
     "cost_wood": 80,
     "cost_krowns": 0,
-    "build_time_sec": 25,
+    "build_time_days": 25,
+    "build_time_source": "northgard.wiki Marketplace",
     "upgrade_cost_wood": 100,
     "upgrade_cost_stone": 10
   },
   "woodcutter": {
     "cost_wood": 50,
-    "build_time_sec": 12
+    "build_time_days": 13,
+    "build_time_source": "northgard.wiki Woodcutter's Lodge"
+  },
+  "scout_camp": {
+    "build_time_days": 8,
+    "build_time_source": "northgard.wiki Scout Camp",
+    "note": "Not implemented as a Build action in this sim — reference only (B1)"
   },
   "archery_range": {
     "cost_wood": 50,
@@ -46,8 +57,10 @@
     "upgrade_cost_stone": 10,
     "upgrade_extra_warband": 1,
     "upgrade_tracker_attack_bonus_pct": 5,
-    "build_time_sec": 22,
-    "upgrade_build_time_sec": 20
+    "build_time_days": 20,
+    "build_time_source": "northgard.wiki Archery Range",
+    "upgrade_build_time_sec": 20,
+    "upgrade_build_time_note": "Calibratable placeholder"
   },
   "forge": {
     "prerequisite": "woodcutter",
@@ -55,10 +68,12 @@
     "cost_krowns": 15,
     "upgrade_second_smith": true,
     "upgrade_forge_speed_pct": 20,
-    "build_time_sec": 20,
+    "build_time_days": 20,
+    "build_time_source": "northgard.wiki Forge",
     "upgrade_cost_wood": 100,
     "upgrade_cost_krowns": 50,
     "upgrade_cost_stone": 10,
-    "upgrade_build_time_sec": 25
+    "upgrade_build_time_sec": 25,
+    "upgrade_build_time_note": "Calibratable placeholder"
   }
 }

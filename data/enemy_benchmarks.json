@@ -1,37 +1,44 @@
-[
-  {
-    "id": "open_field",
-    "enemy_units": [
-      {"type": "warrior", "count": 6, "hp": 50, "attack": 12, "defense": 5}
-    ],
-    "context": {"winter": false, "choke": false, "clustering": 0.6}
+{
+  "_meta": {
+    "id": "K4",
+    "status": "modeler_chosen_benchmark_scenarios_not_authoritative_game_data",
+    "developer_instruction": "No public 20-minute benchmark army dataset; these entries are a combat-model test harness only."
   },
-  {
-    "id": "choke",
-    "enemy_units": [
-      {"type": "shield_bearer", "count": 4, "hp": 60, "attack": 10, "defense": 12}
-    ],
-    "context": {"winter": false, "choke": true, "clustering": 0.85}
-  },
-  {
-    "id": "winter_fight",
-    "enemy_units": [
-      {"type": "warrior", "count": 5, "hp": 50, "attack": 12, "defense": 5}
-    ],
-    "context": {"winter": true, "choke": false, "clustering": 0.5, "outside_territory": false}
-  },
-  {
-    "id": "high_bodycount",
-    "enemy_units": [
-      {"type": "skirmisher", "count": 12, "hp": 35, "attack": 8, "defense": 3}
-    ],
-    "context": {"winter": false, "choke": false, "clustering": 0.7}
-  },
-  {
-    "id": "elite",
-    "enemy_units": [
-      {"type": "elite_warrior", "count": 3, "hp": 90, "attack": 18, "defense": 10}
-    ],
-    "context": {"winter": false, "choke": false, "clustering": 0.4}
-  }
-]
+  "benchmarks": [
+    {
+      "id": "open_field",
+      "enemy_units": [
+        {"type": "warrior", "count": 6, "hp": 50, "attack": 12, "defense": 5}
+      ],
+      "context": {"winter": false, "choke": false, "clustering": 0.6, "supply_distance_tiles": 1, "campaign_year_index": 0}
+    },
+    {
+      "id": "choke",
+      "enemy_units": [
+        {"type": "shield_bearer", "count": 4, "hp": 60, "attack": 10, "defense": 12}
+      ],
+      "context": {"winter": false, "choke": true, "clustering": 0.85, "supply_distance_tiles": 2, "campaign_year_index": 0}
+    },
+    {
+      "id": "winter_fight",
+      "enemy_units": [
+        {"type": "warrior", "count": 5, "hp": 50, "attack": 12, "defense": 5}
+      ],
+      "context": {"winter": true, "choke": false, "clustering": 0.5, "outside_territory": false, "supply_distance_tiles": 1, "campaign_year_index": 0}
+    },
+    {
+      "id": "high_bodycount",
+      "enemy_units": [
+        {"type": "skirmisher", "count": 12, "hp": 35, "attack": 8, "defense": 3}
+      ],
+      "context": {"winter": false, "choke": false, "clustering": 0.7, "supply_distance_tiles": 3, "campaign_year_index": 0}
+    },
+    {
+      "id": "elite",
+      "enemy_units": [
+        {"type": "elite_warrior", "count": 3, "hp": 90, "attack": 18, "defense": 10}
+      ],
+      "context": {"winter": false, "choke": false, "clustering": 0.4, "supply_distance_tiles": 4, "campaign_year_index": 0}
+    }
+  ]
+}

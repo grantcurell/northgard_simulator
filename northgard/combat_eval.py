@@ -8,6 +8,31 @@ from .data_loader import load_json
 from .state import GameState
 
 
+def supply_malus_fraction(distance_tiles: int, campaign_year_index: int) -> float:
+    sp = load_json("supply_penalty")
+    m = sp["distance_tiles_to_malus_fraction"]
+    if distance_tiles <= 1:
+        base = float(m["1"])
+    elif distance_tiles == 2:
+        base = float(m["2"])
+    elif distance_tiles == 3:
+        base = float(m["3"])
+    else:
+        base = float(m["4_plus"])
+    decay = float(sp.get("yearly_malus_reduction_fraction", 0.02)) * max(0, int(campaign_year_index))
+    return max(0.0, base - decay)
+
+
+def supply_attack_defense_multiplier(state: GameState, context: Dict) -> float:
+    sp = load_json("supply_penalty")
+    if sp.get("wild_hunter_removes_supply_malus_lynx_military") and "wild_hunter" in state.hunter_nodes:
+        return 1.0
+    dist = int(context.get("supply_distance_tiles", 1))
+    year = int(context.get("campaign_year_index", 0))
+    malus = supply_malus_fraction(dist, year)
+    return 1.0 - malus
+
+
 @dataclass
 class CombatScore:
     win: bool
@@ -106,6 +131,7 @@ def army_effective_value(state: GameState, context: Dict) -> float:
     same_zone = bool(context.get("paired_lynx_same_zone", True))
     dps = effective_tracker_dps(state, clustering) * max(0, state.units.trackers)
     dps *= winter_attack_mult(state, context)
+    dps *= supply_attack_defense_multiplier(state, context)
     hero = _hero_contribution(state, same_zone)
     hp_pool = effective_tracker_hp(state) * state.units.trackers + hero * 5.0
     return dps * 2.0 + sqrt(max(0.0, hp_pool))

@@ -2,7 +2,8 @@
   "unlock_thresholds": [30, 80, 130, 190, 250, 310, 380, 440, 510, 590, 660, 740],
   "caring_siblings": {
     "brundr_attack_pct_if_with_kaelinn": 30,
-    "regen_same_allied_zone": true
+    "regen_same_allied_zone": true,
+    "source_conflict_note": "Brundr unit page lists +20% in-zone; Path of the Hunter lists +30% for this mechanic — code uses this page (+30%) as the stronger source for the ability."
   },
   "sibling_rivalry": {
     "kaelinn_defense_pct_if_with_brundr": 40,

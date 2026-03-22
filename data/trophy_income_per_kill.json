@@ -1,0 +1,40 @@
+{
+  "source": "Official Fandom — Hunting Trophies (per-kill income)",
+  "status": "sourced_per_kill_table",
+  "notes": [
+    "N2 — Per-clear totals = sum over kills when camp composition is known; no standalone public per-clear table.",
+    "Draugr and other rows under 'with The Great Hunt' on the wiki must not be applied unless Great Hunt is modeled as unlocked (use economy assume_great_hunt_for_mystical_kill_trophies).",
+    "Mystical / extended rows in great_hunt_only_kills are wiki-sourced only for that case."
+  ],
+  "base_kills": {
+    "wolf": 15,
+    "brown_bear": 75,
+    "kaija": 75,
+    "giant_boar": 75,
+    "brundr": 75,
+    "kaelinn": 75,
+    "mythical_ram": 5,
+    "mythical_wolf": 15,
+    "mythical_bear": 50
+  },
+  "great_hunt_only_kills": {
+    "kobold": 5,
+    "draugr": 15,
+    "dwarf": 20,
+    "spectral_warrior": 20,
+    "myrkalfar": 20,
+    "fallen_valkyrie": 50,
+    "rock_golem": 50,
+    "jotunn": 75,
+    "wyvern": 150
+  },
+  "neutral_pack_type_map": {
+    "wolf": "wolf",
+    "bear": "brown_bear",
+    "draugr": "draugr"
+  },
+  "draugr_without_great_hunt": {
+    "status": "unknown_not_publicly_sourced_do_not_guess",
+    "simulator_placeholder_trophies_per_kill": 0.0
+  }
+}

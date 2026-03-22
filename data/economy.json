@@ -7,6 +7,17 @@
   "starting_month_index": 0,
   "calendar_note": "month 0 = March (wiki/editor); winter = Dec–Feb → indices 9,10,11",
   "winter_month_indices": [9, 10, 11],
+  "game_days_per_year_for_wiki_conversion": 360,
+  "seconds_per_game_day": 2.0,
+  "seconds_per_game_day_note": "720 s/year ÷ 360 in-game days/year — calibratable link between wiki 'days' and sim time; not an officially sourced calendar constant.",
+  "spawn_model": "calibration",
+  "spawn_model_options": ["calibration", "happiness_page_candidate"],
+  "happiness_page_candidate_formula": {
+    "status": "community_wiki_candidate_not_official_game_data",
+    "reference": "Fandom Happiness page — community-sourced formula, not an official data dump (V1).",
+    "formula": "DaysUntilNextKinsmen = 1.4 * CurrentHappiness^-0.4 * Population - 1.2 * CurrentHappiness + 23",
+    "example_claim": "population 10, happiness 2 → ~31 days to next villager (per page; verify in-game)"
+  },
   "spawn_calibration": {
     "base_interval_sec": 45.0,
     "happy_coef": 0.08,
@@ -23,6 +34,8 @@
     "fame": 0.0,
     "trophies": 0.0
   },
+  "starting_resources_status": "unknown_not_publicly_sourced_do_not_guess",
+  "starting_resources_note": "S1 — placeholders only; see docs/DATA_GAPS.md",
   "starting_units": {
     "villagers": 4,
     "scouts": 0,
@@ -37,8 +50,14 @@
     "brundr": 0,
     "kaelinn": 0
   },
+  "starting_villagers_status": "unknown_not_publicly_sourced_do_not_guess",
+  "default_happiness": 1.0,
+  "starting_happiness_status": "provisional_public_inference_not_published_row",
+  "starting_happiness_note": "S2: No direct published MP starting-happiness row. Fandom Happiness: +2 per territory, population malus −1 for pop 1–10 on Normal → net +1 if no hidden clan modifiers — derivation only; treat as optional provisional default or override default_happiness if you prefer strict unknown.",
   "colonize_food_without_colonization_lore": [0, 20, 40, 80, 120, 160, 200, 250, 330, 430, 540, 670, 800, 950],
   "colonize_food_with_colonization_lore": [0, 10, 30, 50, 80, 110, 140, 170, 240, 330, 420, 530, 650, 780],
+  "colonization_duration_seconds_unknown_placeholder": 8.0,
+  "colonization_duration_note": "C2 — standard neutral colonization time not publicly sourced; do not infer from special zones.",
   "lore_from_population_ticks": [
     {"min_pop": 1, "max_pop": 5, "lore_per_tick": 1},
     {"min_pop": 6, "max_pop": 9, "lore_per_tick": 2},
@@ -49,6 +68,14 @@
   "fame_per_population_per_sec": 0.05,
   "fame_note": "calibratable — not sourced as exact formula in expert answers",
   "animal_kill_trophy_rate": 0.5,
-  "default_happiness": 2.0,
-  "starting_resources_note": "S1 unknown — placeholders; see docs/DATA_GAPS.md"
+  "tracker_military_upkeep": {
+    "status": "unknown_not_publicly_sourced_do_not_guess",
+    "food_per_tick_placeholder": 0.1,
+    "wood_per_tick_placeholder": 0.05,
+    "note": "M1 — numeric food/wood/kröwn upkeep per Tracker not publicly sourced; placeholders for flow model only."
+  },
+  "town_hall_upgrade_duration_seconds_unknown_placeholder": 25.0,
+  "town_hall_upgrade_duration_note": "TH — upgrade duration still not publicly sourced (Fandom/northgard.wiki); build time ≠ upgrade time; placeholder only.",
+  "assume_great_hunt_for_mystical_kill_trophies": false,
+  "assume_great_hunt_for_mystical_kill_trophies_note": "When false, draugr/kobold/… rows in trophy_income_per_kill (great_hunt_only) use 0 — unknown without Great Hunt per wiki structure. Set true only when explicitly modeling post–Great Hunt."
 }

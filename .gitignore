@@ -8,3 +8,6 @@ __pycache__/
 htmlcov/
 .mypy_cache/
 .ruff_cache/
+
+# Local optimizer output
+plan.md

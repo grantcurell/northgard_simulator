@@ -19,6 +19,7 @@ from .actions import (
     UpgradeTownHall,
     Wait,
 )
+from .building_times import build_duration_seconds
 from .buildings import can_place_building, sync_derived_counters
 from .clearing import estimate_clear_result
 from .colonization import next_colonize_food_cost
@@ -67,7 +68,7 @@ def initial_state(map_id: str = "standard_hostile") -> GameState:
         resources=res,
         units=units,
         housing_cap=0,
-        happiness=float(economy.get("default_happiness", 2.0)),
+        happiness=float(economy.get("default_happiness", 1.0)),
         warband_cap=0,
         warband_used=0,
         zones=zones,
@@ -282,25 +283,25 @@ def apply_action(state: GameState, action: Action) -> None:
         if action.building_type == "house":
             state.resources.wood -= wood
             state.resources.krowns -= krowns
-            dur = cfg["build_time_sec"]
+            dur = build_duration_seconds("house", buildings, economy)
         elif action.building_type == "woodcutter":
             state.resources.wood -= wood
-            dur = cfg["build_time_sec"]
+            dur = build_duration_seconds("woodcutter", buildings, economy)
         elif action.building_type == "archery_range":
             state.resources.wood -= wood
-            dur = cfg["build_time_sec"]
+            dur = build_duration_seconds("archery_range", buildings, economy)
         elif action.building_type == "forge":
             if not _has_woodcutter_lodge(state):
                 return
             state.resources.wood -= wood
             state.resources.krowns -= krowns
-            dur = cfg["build_time_sec"]
+            dur = build_duration_seconds("forge", buildings, economy)
         elif action.building_type == "marketplace":
             if not _has_woodcutter_lodge(state):
                 return
             state.resources.wood -= wood
             state.resources.krowns -= krowns
-            dur = cfg["build_time_sec"]
+            dur = build_duration_seconds("marketplace", buildings, economy)
         else:
             return
         advance_to(state, state.t + dur)
@@ -361,7 +362,8 @@ def apply_action(state: GameState, action: Action) -> None:
         state.resources.wood -= th["upgrade_cost_wood"]
         state.resources.krowns -= th["upgrade_cost_krowns"]
         state.resources.stone -= th.get("upgrade_cost_stone", 10)
-        advance_to(state, state.t + 25.0)
+        dur_th = float(economy.get("town_hall_upgrade_duration_seconds_unknown_placeholder", 25.0))
+        advance_to(state, state.t + dur_th)
         state.town_hall_upgraded = True
         _log(state, action)
         sync_derived_counters(state)
@@ -371,7 +373,8 @@ def apply_action(state: GameState, action: Action) -> None:
         z = state.zones[action.zone_id]
         food_cost = next_colonize_food_cost(state, economy)
         state.resources.food -= food_cost
-        advance_to(state, state.t + 8.0)
+        col_dur = float(economy.get("colonization_duration_seconds_unknown_placeholder", 8.0))
+        advance_to(state, state.t + col_dur)
         z.owner = "self"
         state.colonized_zones += 1
         _log(state, action)

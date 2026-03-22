@@ -34,6 +34,11 @@ def military_shell_value(state: GameState) -> float:
     )
 
 
+def gathering_value(state: GameState) -> float:
+    """Wood only accrues from woodcutters in `economy.compute_net_flows`. Nudge search toward lodges + workers."""
+    return float(state.woodcutter_huts) * 14.0 + float(state.units.woodcutters) * 5.0
+
+
 def risk_penalty(state: GameState) -> float:
     if state.resources.krowns < 0 or state.resources.food < -50:
         return 80.0
@@ -47,6 +52,7 @@ def combined_heuristic(state: GameState) -> float:
         + lore_progress_value(state)
         + trophy_progress_value(state)
         + military_shell_value(state)
+        + gathering_value(state)
         - risk_penalty(state)
     )
 

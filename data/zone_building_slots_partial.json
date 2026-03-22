@@ -1,0 +1,12 @@
+{
+  "id": "C3",
+  "status": "partial_public_rules_full_table_unknown",
+  "source": "Fandom Tile, Town Hall, Swamp pages (expert pass Jan 2026)",
+  "developer_instruction": "Do not guess beyond these published rules; full authoritative per-zone-type slot table is unknown / not publicly sourced.",
+  "rules": [
+    "Ordinary tiles: building capacity typically ranges from 2 to 4.",
+    "Starting (main) tile: capacity 5 including Town Hall (Town Hall page).",
+    "Develop Area: increases max buildings by 1.",
+    "Swamp: usually 2 capacity."
+  ]
+}

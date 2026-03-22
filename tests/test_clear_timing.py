@@ -7,3 +7,4 @@ def test_clear_returns_keys():
     r = estimate_clear_result({"attack_power": 20.0}, "wolves_2", s)
     assert "clear_time_sec" in r
     assert "trophies_gained" in r
+    assert r["trophies_gained"] == 30.0

@@ -1,11 +1,12 @@
 {
   "id": "standard_hostile",
   "start_zone": "main",
+  "map_note": "C3 — see data/zone_building_slots_partial.json for published partial rules; main uses capacity 5 including Town Hall (sim does not list TH as a building entry).",
   "zones": {
     "main": {
       "neighbors": ["north", "east"],
       "zone_tags": ["forest", "deer"],
-      "building_capacity": 6,
+      "building_capacity": 5,
       "buildings": [],
       "neutral_pack": null,
       "lure_type": null,

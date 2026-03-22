@@ -69,6 +69,8 @@ def _features(state: GameState) -> np.ndarray:
             float(state.colonized_zones) / 8.0,
             float(state.t) / 1200.0,
             float(state.units.mielikki + state.units.brundr + state.units.kaelinn) / 3.0,
+            # Wood income requires Woodcutter's Lodge + assigned woodcutters (see economy.py).
+            float(state.woodcutter_huts) / 6.0 + float(state.units.woodcutters) / 12.0,
         ],
         dtype=np.float32,
     )
@@ -89,7 +91,24 @@ def batched_heuristic_scores(
     """Linear heuristic on GPU: h = sum_i w_i x_i + b. Returns CuPy 1d array."""
     if weights is None:
         weights = np.array(
-            [0.6, 0.5, 0.7, 0.2, 0.9, 0.8, 1.0, 2.2, 1.1, 1.4, 1.6, 1.0, 0.9, -0.15, 2.0],
+            [
+                0.6,
+                0.5,
+                0.7,
+                0.2,
+                0.9,
+                0.8,
+                1.0,
+                2.2,
+                1.1,
+                1.4,
+                1.6,
+                1.0,
+                0.9,
+                -0.15,
+                2.0,
+                1.35,
+            ],
             dtype=np.float32,
         )
     bias = cp.float32(0.5)

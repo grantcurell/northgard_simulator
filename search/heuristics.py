@@ -3,6 +3,7 @@ from northgard.search.heuristics import (
     combined_heuristic_batch,
     eco_value,
     expansion_value,
+    gathering_value,
     lore_progress_value,
     military_shell_value,
     risk_penalty,
@@ -12,6 +13,7 @@ from northgard.search.heuristics import (
 __all__ = [
     "eco_value",
     "expansion_value",
+    "gathering_value",
     "lore_progress_value",
     "trophy_progress_value",
     "military_shell_value",

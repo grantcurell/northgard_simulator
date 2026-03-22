@@ -26,7 +26,7 @@ It is **not** a full game simulation. Think of it as a **spreadsheet with rules*
 1. **Data** — Numbers live in JSON (`data/`) so you can edit costs and effects without touching Python logic.
 2. **Simulator** — `GameState` holds time, resources, units, zones, lores, and hunter path. **Advancing time** applies production and upkeep; **actions** apply instant costs and time skips (e.g. build duration).
 3. **Combat** — At the end of the horizon, **no real fight is simulated**. A separate **evaluator** turns the final army + buffs into a scalar score against fixed “benchmark” enemy armies (`data/enemy_benchmarks.json`).
-4. **Search** — **Beam search** explores many action sequences, keeps the best partial paths per a heuristic, then **finalizes** states to the 20-minute clock and ranks by mean benchmark score. **Batch heuristic and top-k scoring run on the GPU** via **CuPy**; importing `northgard.gpu_ops` **fails immediately** if CUDA is missing or kernels cannot execute. The macro simulator (state updates, actions) still runs on the CPU in Python.
+4. **Search** — **Beam search** explores many action sequences, keeps the best partial paths per a heuristic, then **finalizes** states to the 20-minute clock and ranks by mean benchmark score. The GPU heuristic includes **gathering** (Woodcutter huts + woodcutters) because **wood income in the model only comes from assigned woodcutters** — without that nudge, military-first plans could ignore lodges while living off **starting wood**. **Batch heuristic and top-k scoring run on the GPU** via **CuPy**; importing `northgard.gpu_ops` **fails immediately** if CUDA is missing or kernels cannot execute. The macro simulator (state updates, actions) still runs on the CPU in Python.
 
 ---
 
@@ -54,7 +54,7 @@ So the simulator is **deterministic** given a fixed action list: same inputs →
 | **Combat scoring** | `northgard/combat_eval.py`, `northgard/scoring.py` | Turns **final state** into benchmark scores (effective DPS-style value + simple win heuristic). |
 | **GPU batch** | `northgard/gpu_ops.py` | Encodes features on the host, then scores **batches** on the GPU (heuristic + combat proxy, top-k). **Requires a working CUDA device** — no CPU fallback. |
 | **Search** | `northgard/search/beam_search.py`, `heuristics.py` | Beam search loop; top-k selection of expanded states. |
-| **CLI** | `cli/run_optimizer.py` | Loads map + benchmarks, runs beam search, prints JSON (timeline + final state + score). |
+| **CLI** | `cli/run_optimizer.py` | Loads map + benchmarks, runs beam search; **Markdown report by default** (`--format json` for machine output). |
 
 The top-level **`search/`** package only **re-exports** `northgard.search` for import convenience.
 
@@ -77,6 +77,8 @@ From the **repository root** (this directory), with dependencies installed:
 python -m pytest tests/ -q
 python cli/run_optimizer.py --beam 24 --rounds 60 --expansions 6000
 ```
+
+By default this prints **Markdown** with a **full-horizon playbook** first: time ranges from **0:00 to the end of the scoring window** (default **1200 s ≈ 20 min** sim clock) describing what each phase means — optimizer macro steps, waits, and **passive stretches** with player-facing guidance. After that: assumptions, scores, compact action list, and final snapshot. Use **`--horizon 3600`** for a longer window. **`--format json`** includes `action_intervals` and `playbook_sections`. Save with `> plan.md`.
 
 Use a virtualenv and `pip install -r requirements.txt` as needed (`cupy-cuda12x` or the variant matching your CUDA version).
 

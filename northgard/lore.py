@@ -2,6 +2,12 @@ from __future__ import annotations
 
 from typing import Set
 
+from .data_loader import load_json
+
+_ld = load_json("lore_costs")
+LORE_COSTS = dict(_ld["placeholder_costs_for_simulator_only"])
+LORE_COSTS_STATUS = _ld["status"]
+
 
 def sharp_axes_mult(has_lore: bool) -> float:
     return 1.2 if has_lore else 1.0
@@ -53,18 +59,6 @@ def feeling_safe_bonus(
     bonus += upgraded_military_camps
     return bonus
 
-
-LORE_COSTS = {
-    "sharp_axes": 50,
-    "colonization": 50,
-    "recruitment": 50,
-    "weaponsmith": 100,
-    "archery_mastery": 100,
-    "hearthstone": 50,
-    "shiny_happy_people": 50,
-    "feeling_safe": 100,
-    "spoils_of_plenty": 100,
-}
 
 LORE_ORDER = [
     "sharp_axes",

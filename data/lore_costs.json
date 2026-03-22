@@ -1,0 +1,42 @@
+{
+  "status": "unknown_not_publicly_sourced_do_not_guess",
+  "developer_note": "Per-node lore-point prices for Lynx remain unknown (L1). The map below is a simulator-only placeholder so the optimizer can run; it is not game data.",
+  "fandom_lore_aggregate_facts": {
+    "status": "sourced_aggregate_only_not_per_node_schedule",
+    "source": "Fandom Lore page",
+    "total_tree_lore_cost": 27450,
+    "last_knowledge_lore_cost": 4940,
+    "note": "Wiki states costs increase with each discovery; full per-node schedule not in sources checked (L1)."
+  },
+  "lynx_lore_names_order_public_hint": {
+    "status": "public_branch_order_not_prerequisite_graph",
+    "source": "Fandom Lynx clan page",
+    "developer_instruction": "L2 — names and branch order are a public hint only; exact prerequisite graph is unknown unless extracted from game.",
+    "order_wiki_names": [
+      "Sharp Axes",
+      "Colonization",
+      "Spoils of Plenty",
+      "Recruitment",
+      "Medicine",
+      "Hearthstone",
+      "Shiny Happy People",
+      "Weaponsmith",
+      "Archery Mastery"
+    ]
+  },
+  "placeholder_costs_for_simulator_only": {
+    "sharp_axes": 50,
+    "colonization": 50,
+    "recruitment": 50,
+    "weaponsmith": 100,
+    "archery_mastery": 100,
+    "hearthstone": 50,
+    "shiny_happy_people": 50,
+    "feeling_safe": 100,
+    "spoils_of_plenty": 100
+  },
+  "prerequisite_graph": {
+    "status": "unknown_not_publicly_sourced_do_not_guess",
+    "note": "L2 — not enforced in sim"
+  }
+}

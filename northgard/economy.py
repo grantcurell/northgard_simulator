@@ -10,7 +10,10 @@ from .lore import (
     recruitment_pop_bonus_pct,
     sharp_axes_mult,
 )
-from .population import villager_spawn_interval_seconds
+from .population import (
+    villager_spawn_interval_seconds,
+    villager_spawn_interval_seconds_happiness_page_candidate,
+)
 from .state import GameState, Resources, total_civilian_workers, total_population
 
 
@@ -119,8 +122,9 @@ def compute_net_flows(state: GameState) -> NetFlows:
 
     krowns -= _krowns_upkeep_per_sec(state, economy)
 
-    food_upkeep = 0.1 * state.units.trackers / spt
-    wood_upkeep = 0.05 * state.units.trackers / spt
+    tu = economy["tracker_military_upkeep"]
+    food_upkeep = float(tu["food_per_tick_placeholder"]) * state.units.trackers / spt
+    wood_upkeep = float(tu["wood_per_tick_placeholder"]) * state.units.trackers / spt
     food_rate -= food_upkeep
     wood_rate -= wood_upkeep + firewood
 
@@ -157,13 +161,24 @@ def schedule_next_spawn(state: GameState, economy: Dict | None = None) -> None:
     pop = total_population(state.units)
     rec = recruitment_pop_bonus_pct(state.lores)
     th = 20.0 if state.town_hall_upgraded else 0.0
-    interval = villager_spawn_interval_seconds(
-        state.happiness,
-        pop,
-        recruitment_bonus_pct=rec,
-        townhall_bonus_pct=th,
-        calibration=cal,
-    )
+    mode = economy.get("spawn_model", "calibration")
+    if mode == "happiness_page_candidate":
+        spd = float(economy["seconds_per_game_day"])
+        interval = villager_spawn_interval_seconds_happiness_page_candidate(
+            state.happiness,
+            pop,
+            spd,
+            recruitment_bonus_pct=rec,
+            townhall_bonus_pct=th,
+        )
+    else:
+        interval = villager_spawn_interval_seconds(
+            state.happiness,
+            pop,
+            recruitment_bonus_pct=rec,
+            townhall_bonus_pct=th,
+            calibration=cal,
+        )
     state.next_villager_spawn_at = state.t + interval
 
 

@@ -1,0 +1,14 @@
+{
+  "source": "Official Fandom — Supply Penalty (March 2021 rebalance note on yearly decay)",
+  "distance_tiles_to_malus_fraction": {
+    "1": 0.0,
+    "2": 0.05,
+    "3": 0.15,
+    "4_plus": 0.3
+  },
+  "malus_reduces_attack_and_defense": true,
+  "yearly_malus_reduction_fraction": 0.02,
+  "yearly_reduction_note": "Wiki states malus decreases by 2% at the start of each year; stacking with distance-based steps is left as a simple linear decay on the malus fraction (model assumption).",
+  "wild_hunter_removes_supply_malus_lynx_military": true,
+  "wild_hunter_note": "Matches hunter_path wild_hunter.ignore_supply_malus"
+}
